@@ -5,11 +5,11 @@ module.exports.config = {
   credits: "CatalizCS mod video by Đăng",
   description: "Play video from YouTube",
   usePrefix: true,
-  commandCategory: "music",
+  commandCategory: "Phương tiện",
   usages: "video [Text]",
   cooldowns: 10,
   dependencies: {
-    "@distube/ytdl-core": "",
+    "ytdl-core": "",
     "simple-youtube-api": "",
     "fs-extra": "",
     "axios": ""
@@ -20,11 +20,11 @@ module.exports.config = {
 };
 
 module.exports.handleReply = async function({ api, event, handleReply }) {
-  const ytdl = global.nodemodule["@distube/ytdl-core"];
+  const ytdl = global.nodemodule["ytdl-core"];
   const { createReadStream, createWriteStream, unlinkSync, statSync } = global.nodemodule["fs-extra"];
   ytdl.getInfo(handleReply.link[event.body - 1]).then(res => {
     let body = res.videoDetails.title;
-    api.sendMessage(`Downloading Video!\n❍━━━━━━━━━━━━❍\n${body}\n❍━━━━━━━━━━━━❍\nThis may take a while!`, event.threadID, (err, info) =>
+    api.sendMessage(`Downloading Video!\n-----------\n${body}\n-----------\nThis may take a while!`, event.threadID, (err, info) =>
       setTimeout(() => { api.unsendMessage(info.messageID) }, 100000));
   });
   try {
@@ -96,14 +96,18 @@ module.exports.run = async function({ api, event, args }) {
 
         let getthumnail = (await axios.get(`${linkthumnail}`, { responseType: 'arraybuffer' })).data;
 
+
+
+
+
         fs.writeFileSync(folderthumnail, Buffer.from(getthumnail, 'utf-8'));
 
         imgthumnail.push(fs.createReadStream(__dirname + `/cache/${numb}.png`));
         /////=//////////////
-        msg += (`${num += 1}. ${value.title}\nTime: ${time}\nChannel: ${channel}\n❍━━━━━━━━━━━━❍\n`);
+        msg += (`${num += 1}. ${value.title}\nTime: ${time}\nKênh: ${channel}\n-----------------------\n`);
       }
 
-      var body = `There are ${link.length} results matching your search keyword:\n\n${msg}\nPlease reply(feedback) choose one of the above searches`
+      var body = `🎼 There are ${link.length} results matching your search keyword:\n👇👇👇👇👇\n${msg}\nPlease reply(feedback) choose one of the above searches`
 
       return api.sendMessage({ attachment: imgthumnail, body: body }, event.threadID, (error, info) => global.client.handleReply.push({
         name: this.config.name,
@@ -146,10 +150,10 @@ module.exports.run = async function({ api, event, args }) {
 
         imgthumnail.push(fs.createReadStream(__dirname + `/cache/${numb}.png`));
         /////=//////////////
-        msg += (`${num += 1}. ${value.title}\nTime: ${time}\nChannel: ${channel}\n❍━━━━━━━━━━━━❍\n`);
+        msg += (`${num += 1}. ${value.title}\nTime: ${time}\nKênh: ${channel}\n-----------------------\n`);
       }
 
-      var body = `There are ${link.length} results matching your search keyword:\n\n${msg}\nPlease reply(feedback) choose one of the above searches`
+      var body = `🎼 There are ${link.length} results matching your search keyword:\n👇👇👇👇👇\n${msg}\nPlease reply(feedback) choose one of the above searches`
       return api.sendMessage({ attachment: imgthumnail, body: body }, event.threadID, (error, info) => global.client.handleReply.push({
         name: this.config.name,
         messageID: info.messageID,

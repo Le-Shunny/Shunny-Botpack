@@ -11,8 +11,9 @@ module.exports.config = {
 };
 
 module.exports.run = function({ api, event, getText }) {
+	// Check if there's a message to reply to
 	if (!event.messageReply) {
-		return api.sendMessage(getText("missingReply"), event.threadID, event.messageID);
+		return api.sendMessage("You can't unsend a message out of nowhere. Please reply to a message first.", event.threadID, event.messageID);
 	}
 
 	if (event.messageReply.senderID != api.getCurrentUserID()) return api.sendMessage(getText("returnCant"), event.threadID, event.messageID);
@@ -21,8 +22,8 @@ module.exports.run = function({ api, event, getText }) {
 }
 
 module.exports.languages = {
-	"en": {
-		"returnCant": "Can't remove other people's messages.",
-		"missingReply": "You can't unsend a message out of nowhere. Please reply to a message first."
+	"vi": {
+		"returnCant": "Không thể gỡ tin nhắn của người khác.",
+		"missingReply": "Hãy reply tin nhắn cần gỡ."
 	}
 }
