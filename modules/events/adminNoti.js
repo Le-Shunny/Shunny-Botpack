@@ -13,7 +13,7 @@ module.exports.config = {
     "log:thread-poll"
   ],
   version: "1.0.1",
-  credits: "Mirai Team & mod by Yan Maglinte",
+  credits: "Mirai Team & Yan Maglinte",
   description: "Group Information Update",
   envConfig: {
     autoUnsend: true,
@@ -37,10 +37,10 @@ module.exports.run = async function({ event, api, Threads, Users }) {
       case "log:thread-admins": {
         if (logMessageData.ADMIN_EVENT === "add_admin") {
           dataThread.adminIDs.push({ id: logMessageData.TARGET_ID });
-          api.sendMessage(`[ GROUP UPDATE ]\n❯ USER UPDATE ${Users.getNameUser(logMessageData.TARGET_ID)} Became a group admin`, threadID);
+          api.sendMessage(`[ GROUP UPDATE ]\n❯ USER UPDATE ${Users.getNameUser(logMessageData.TARGET_ID)} BECAME A GROUP ADMIN`, threadID);
         } else if (logMessageData.ADMIN_EVENT === "remove_admin") {
           dataThread.adminIDs = dataThread.adminIDs.filter(item => item.id !== logMessageData.TARGET_ID);
-          api.sendMessage(`[ GROUP UPDATE ]\n❯ Remove user's admin position ${logMessageData.TARGET_ID}`, threadID);
+          api.sendMessage(`[ GROUP UPDATE ]\n❯ REMOVED USER ADMIN POSITION ${logMessageData.TARGET_ID}`, threadID);
         }
         break;
       }
