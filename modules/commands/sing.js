@@ -1,14 +1,14 @@
 const fs = require('fs-extra');
-const ytdl = require('@distube/ytdl-core');
+const ytdl = require('ytdl-core');
 const Youtube = require('youtube-search-api');
 const axios = require('axios');
 const convertHMS = (value) => new Date(value * 1000).toISOString().slice(11, 19);
 
 const config = {
-     name: "sing",
+     name: "audio",
      version: "1.0.0",
      hasPermssion: 0,
-     credits: "Mirai Team & Yan Maglinte",
+     credits: "Yan Maglinte",
      description: "Play music via YouTube link or search keyword",
      usePrefix: true,
      commandCategory: "Means",

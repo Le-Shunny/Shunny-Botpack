@@ -15,8 +15,8 @@ module.exports.config = {
     cooldowns: 0,
 };
 
-const background = "https://i.imgur.com/zQ7JY17.jpg";
-const fontlink = 'https://drive.google.com/u/0/uc?id=1ZwFqYB-x6S9MjPfYm3t3SP1joohGl4iw&export=download';
+const background = "https://i.imgur.com/8iWQZJh.jpeg";
+const fontlink = 'https://drive.google.com/file/d/1U3ufqSdv4Jr-uhZchWTu6aPPRMWWbBqS/view?usp=drivesdk';
 
 module.exports.run = async function({api, event, args, utils, Users, Threads}) {
     try {
@@ -96,7 +96,7 @@ module.exports.run = async function({api, event, args, utils, Users, Threads}) {
             fs.writeFileSync(__dirname + '/cache/Image.png', buffer);
 
             return api.sendMessage({
-                body: `❍━[INFORMATION]━❍\n\nName: ${name}\nFacebook URL: https://facebook.com/${username}\nUID: ${id}\n\n❍━━━━━━━━━━━━❍`,
+                body: `❍━[𝗜𝗡𝗙𝗢𝗥𝗠𝗔𝗧𝗜𝗢𝗡]━❍\n\nName: ${name}\nFacebook URL: https://facebook.com/${username}\nUID: ${id}\n\n❍━━━━━━━━━━━━❍`,
                 attachment: fs.createReadStream(__dirname + `/cache/Image.png`)
             }, event.threadID, () => fs.unlinkSync(__dirname + `/cache/Image.png`), event.messageID);
         };

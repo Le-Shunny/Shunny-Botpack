@@ -4,7 +4,7 @@ module.exports.config = {
   name: "quotes",
   version: "1.0.0",
   hasPermssion: 2,
-  credits: "Yan Maglinte",
+  credits: "???", // I DON'T KNOW WHO PROVIDED THIS API BUT I DID IMPLEMENTED IT TO MIRAI - Yan
   description: "Randomly receive quotes",
   usePrefix: true,
   commandCategory: "notes",

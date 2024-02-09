@@ -33,8 +33,8 @@ module.exports.handleEvent = async function({
   const { loadImage, createCanvas } = require("canvas");
   const fs = global.nodemodule["fs-extra"];
   const axios = global.nodemodule["axios"];
-  let pathImg = __dirname + "/cache/rankup/rankup.png";
-  let pathAvt1 = __dirname + "/cache/Avtmot.png";
+  let pathImg = __dirname + "/cache/rankup/rankup.jpg";
+  let pathAvt1 = __dirname + "/cache/Avtmot.jpg";
   var id1 = event.senderID;
 
 
@@ -71,18 +71,18 @@ module.exports.handleEvent = async function({
     const moduleName = this.config.name;
 
     var background = [
-      "https://i.imgur.com/mXmaIFr.jpeg",
-      "https://i.imgur.com/SeLdZua.jpeg",
-      "https://i.imgur.com/HrHPulp.jpeg",
-      "https://i.imgur.com/zZpub9k.jpeg",
-      "https://i.imgur.com/EP7gdQy.jpeg",
-      "https://i.imgur.com/pKOgCjs.jpeg",
-      "https://i.imgur.com/1jPLnZX.jpeg",
-      "https://i.imgur.com/QmtNkyQ.jpg",
-      "https://i.imgur.com/qybgIRD.jpg",
-      "https://i.imgur.com/RFRARpY.jpg",
-      "https://i.imgur.com/B7i6dhL.jpg",
-      "https://i.imgur.com/LkHUQMJ.jpeg"
+      "https://i.imgur.com/SvRlEMJ.jpeg",
+      "https://i.imgur.com/SvRlEMJ.jpeg",
+      "https://i.imgur.com/SvRlEMJ.jpeg",
+      "https://i.imgur.com/SvRlEMJ.jpeg",
+      "https://i.imgur.com/SvRlEMJ.jpeg",
+      "https://i.imgur.com/SvRlEMJ.jpeg",
+      "https://i.imgur.com/SvRlEMJ.jpeg",
+      "https://i.imgur.com/SvRlEMJ.jpeg",
+      "https://i.imgur.com/SvRlEMJ.jpeg",
+      "https://i.imgur.com/SvRlEMJ.jpeg",
+      "https://i.imgur.com/SvRlEMJ.jpeg",
+      "https://i.imgur.com/SvRlEMJ.jpeg"
     ];
     var rd = background[Math.floor(Math.random() * background.length)];
     let getAvtmot = (

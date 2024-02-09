@@ -2,7 +2,7 @@ module.exports.config = {
     name: "sendnoti",
     version: "1.0.0",
     hasPermssion: 2,
-    credits: "Yan Maglinte",
+    credits: "frogz",//palitan mopa credits tukmol ka
     description: "Sends a message to all groups and can only be done by the admin.",
     usePrefix: true,
     commandCategory: "message",
@@ -17,7 +17,10 @@ module.exports.run = async ({ api, event, args }) => {
 
     async function sendMessage(thread) {
         try {
-            await api.sendMessage(`› A message from the Admin:\n\n${custom}`, thread.threadID);
+            await api.sendMessage(`𝙉𝙊𝙏𝙄𝘾𝙀 𝙁𝙍𝙊𝙈 𝘿𝙀𝙑𝙀𝙇𝙊𝙋𝙀𝙍 
+ ---------------- 
+『𝘋𝘦𝘷𝘦𝘭𝘰𝘱𝘦𝘳 𝘕𝘢𝘮𝘦』:JOSHUA APOSTOL
+ --------------- \n\n${custom}`, thread.threadID);
             sentCount++;
         } catch (error) {
             console.error("Error sending a message:", error);
