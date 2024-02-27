@@ -4,9 +4,9 @@ module.exports.config = {
   hasPermssion: 0,
   credits: "Shen",
   description: "Get your osu catch signature!",
-  usePrefix: false
+  usePrefix: true,
   commandCategory: "other",
-  usages: "[url site]",
+  usages: "osu <username> <std/mania/catch/taiko",
   cooldowns: 5,
   dependencies: {
         "fs-extra": "",
@@ -19,7 +19,7 @@ module.exports.run = async ({ event, api, args, }) => {
 
     try {
         const path = __dirname + `/cache/${event.threadID}-${event.senderID}s.png`;
-        await global.utils.downloadFile(`https://image.thum.io/get/width/1920/crop/400/fullpage/noanimate/https://osu-sig.vercel.app/card?user=${args[0]}&mode=catch&lang=en&w=2002&h=1165`, path);
+        await global.utils.downloadFile(`https://image.thum.io/get/width/1920/crop/400/fullpage/noanimate/https://osu-sig.vercel.app/card?user=${args[0]}&mode=${args[1]}&lang=en&w=2002&h=1165`, path);
         api.sendMessage({ attachment: createReadStream(path) }, event.threadID, () => unlinkSync(path));
     }
     catch {
