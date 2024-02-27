@@ -7,7 +7,7 @@ module.exports.config = {
   hasPermssion: 0,
   credits: 'Yan Maglinte',
   description: 'An AI command using Hercai API!',
-  usePrefix: false,
+  usePrefix: true,
   commandCategory: 'chatbots',
   usages: 'Ai [prompt]',
   cooldowns: 5,
