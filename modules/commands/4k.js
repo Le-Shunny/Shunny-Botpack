@@ -4,7 +4,7 @@ version: '0.0.1',
 hasPermssion: 0,
 credits: 'DC-Nam',
 description: 'Tăng chất lượng ảnh lên 4k',
-usePrefix: false,
+usePrefix: true,
 commandCategory: 'Ảnh',
 usages: '[image]',
 cooldowns: 3
