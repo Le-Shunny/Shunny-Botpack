@@ -1,4 +1,4 @@
-  exports.config = {
+  module.exports.config = {
 name: '4k',
 version: '0.0.1',
 hasPermssion: 0,
@@ -13,7 +13,7 @@ cooldowns: 3
 
 let eta = 3;
 
-exports.run = async o=> {
+module.exports.run = async o=> {
 
   let send = msg => o.api.sendMessage(msg, o.event.threadID, o.event.messageID);
 
